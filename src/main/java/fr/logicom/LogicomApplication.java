@@ -1,4 +1,4 @@
-package fr.logicom.logicom;
+package fr.logicom;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
