@@ -2,6 +2,7 @@ package fr.logicom.logicom.models;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,6 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int categoryId;
     private String categoryName;
-    @OneToMany(mappedBy = "product, cascade = CascadeType.ALL")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private List<Product> products;
 }
