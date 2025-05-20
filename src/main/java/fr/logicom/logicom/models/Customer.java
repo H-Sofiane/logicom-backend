@@ -2,6 +2,7 @@ package fr.logicom.logicom.models;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,7 +30,7 @@ public class Customer {
 	private String password;
 	private String phoneNumber;
 	private String adress;
-	@OneToMany(mappedBy = "customer, cascade = CascadeType.ALL")
+	@OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
 	private List<Order> orders;
 
 }
