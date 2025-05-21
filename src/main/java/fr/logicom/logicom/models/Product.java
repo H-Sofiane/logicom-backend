@@ -30,7 +30,7 @@ public class Product {
 	 @OneToOne
 	private Brand brand;
 	 
-	 @ManyToMany(mappedBy = "products")
+	 @ManyToMany(mappedBy = "product")
 	  private List<Order> orders;
 	
 	
