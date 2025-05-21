@@ -1,4 +1,4 @@
-package fr.logicom.logicom.models;
+package fr.logicom.models;
 
 import java.util.List;
 
@@ -18,13 +18,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Brand {
-	
+public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long brandId;
-	private String brandName;
-	@OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
-	private List<Product> products;
-
+    private int categoryId;
+    private String categoryName;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<Product> products;
 }
