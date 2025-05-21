@@ -1,4 +1,4 @@
-package fr.logicom.logicom.models;
+package fr.logicom.models;
 
 
 import java.time.LocalDateTime;
