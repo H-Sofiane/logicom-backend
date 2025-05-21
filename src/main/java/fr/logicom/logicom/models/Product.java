@@ -31,7 +31,7 @@ public class Product {
 	 @ManyToOne
 	private Brand brand;
 	 
-	 @ManyToMany(mappedBy = "product")
+	 @ManyToMany
 	private List<Order> orders;
 	
 	
