@@ -1,5 +1,36 @@
 package fr.logicom.logicom.models;
 
-public class Order {
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+import fr.logicom.enums.OrderStatus;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class Order {
+	@Id
+ private Long id;
+  @ManyToOne(fetch = FetchType.LAZY)
+  private Customer customer;
+  private LocalDateTime orderDate;
+  private LocalDateTime deliveryDate;
+  @Enumerated(EnumType.STRING)
+  private OrderStatus staus;
+  private String shippingAdress;
+  @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<Product> products;
+  
 }
