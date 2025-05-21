@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,13 +26,13 @@ public class Product {
 	private String description;
 	private double prix;
 	private int stock;
-	 @OneToOne
+	 @ManyToOne
 	private Category category;
-	 @OneToOne
+	 @ManyToOne
 	private Brand brand;
 	 
-	 @ManyToMany(mappedBy = "products")
-	  private List<Order> orders;
+	 @ManyToMany
+	private List<Order> orders;
 	
 	
 	
