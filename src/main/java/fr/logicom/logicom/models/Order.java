@@ -34,7 +34,7 @@ public class Order {
   @Enumerated(EnumType.STRING)
   private OrderStatus staus;
   private String shippingAdress;
-  @ManyToMany
+  @ManyToMany 
   private List<Product> products;
   
 }
