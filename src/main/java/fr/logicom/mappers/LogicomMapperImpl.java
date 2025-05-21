@@ -7,7 +7,7 @@ import fr.logicom.models.Customer;
 import org.springframework.beans.BeanUtils;
 
 @Service
-public class logicomMapperImpl {
+public class LogicomMapperImpl {
 	public CustomerDTO fromCustomer(Customer customer) {
 		CustomerDTO customerDTO = new CustomerDTO();
 		BeanUtils.copyProperties(customer, customerDTO);
